@@ -223,20 +223,20 @@ Copyright &copy; 2014. NodePrime.
 
 
 
-[npm-image]: http://img.shields.io/npm/v/generator-flow-io.svg
-[npm-url]: https://npmjs.org/package/generator-flow-io
+[npm-image]: http://img.shields.io/npm/v/generator-doc-metrix-node.svg
+[npm-url]: https://npmjs.org/package/generator-doc-metrix-node
 
-[travis-image]: http://img.shields.io/travis/flow-io/generator-flow-io/master.svg
-[travis-url]: https://travis-ci.org/flow-io/generator-flow-io
+[travis-image]: http://img.shields.io/travis/doc-metrix/generator-doc-metrix-node/master.svg
+[travis-url]: https://travis-ci.org/doc-metrix/generator-doc-metrix-node
 
-[coveralls-image]: https://img.shields.io/coveralls/flow-io/generator-flow-io/master.svg
-[coveralls-url]: https://coveralls.io/r/flow-io/generator-flow-io?branch=master
+[coveralls-image]: https://img.shields.io/coveralls/doc-metrix/generator-doc-metrix-node/master.svg
+[coveralls-url]: https://coveralls.io/r/doc-metrix/generator-doc-metrix-node?branch=master
 
-[dependencies-image]: http://img.shields.io/david/flow-io/generator-flow-io.svg
-[dependencies-url]: https://david-dm.org/flow-io/generator-flow-io
+[dependencies-image]: http://img.shields.io/david/doc-metrix/generator-doc-metrix-node.svg
+[dependencies-url]: https://david-dm.org/doc-metrix/generator-doc-metrix-node
 
-[dev-dependencies-image]: http://img.shields.io/david/dev/flow-io/generator-flow-io.svg
-[dev-dependencies-url]: https://david-dm.org/dev/flow-io/generator-flow-io
+[dev-dependencies-image]: http://img.shields.io/david/dev/doc-metrix/generator-doc-metrix-node.svg
+[dev-dependencies-url]: https://david-dm.org/dev/doc-metrix/generator-doc-metrix-node
 
-[github-issues-image]: http://img.shields.io/github/issues/flow-io/generator-flow-io.svg
-[github-issues-url]: https://github.com/flow-io/generator-flow-io/issues
+[github-issues-image]: http://img.shields.io/github/issues/doc-metrix/generator-doc-metrix-node.svg
+[github-issues-url]: https://github.com/doc-metrix/generator-doc-metrix-node/issues

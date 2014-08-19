@@ -52,7 +52,7 @@ You have the option to initialize the module directory as a Git repository. The 
 
 ``` bash
 $ git init
-$ git remote add origin https://github.com/doc-metrix/{{ repo_name }}.git
+$ git remote add origin https://github.com/doc-metrix/<repo_name>.git
 $ git add -A
 $ git commit -m "[INIT]"
 ```

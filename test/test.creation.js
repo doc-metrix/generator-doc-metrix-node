@@ -47,7 +47,7 @@ describe( 'doc-metrix generator for Node.js', function tests() {
 
 	// TESTS //
 
-	it( 'creates expected files', function test( done ) {
+	it( 'creates expected files', function test() {
 		var expected = [
 				'.gitignore',
 				'.npmignore',
@@ -56,6 +56,8 @@ describe( 'doc-metrix generator for Node.js', function tests() {
 				'TODO.md',
 				'Makefile',
 				'LICENSE',
+				'package.json',
+				'bower.json',
 				'examples/index.js',
 				'test/test.js',
 				'lib/index.js'

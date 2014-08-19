@@ -241,6 +241,18 @@
 		}, // end METHOD package()
 
 		/**
+		* METHOD: bower()
+		*	Creates a `bower.json` file.
+		*/
+		bower: function() {
+			var context = {
+					'repo': this.repo
+				};
+
+			this.template( '_bower.json', 'bower.json' );
+		}, // end METHOD bower()
+
+		/**
 		* METHOD: todo()
 		*	Copies over a TODO file.
 		*/
@@ -306,7 +318,7 @@
 		*/
 		install: function() {
 			var config = {
-					'bower': false,
+					'bower': true,
 					'npm': true,
 					'skipInstall': this.options[ 'skip-install' ],
 					'skipMessage': false,

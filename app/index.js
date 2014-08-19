@@ -136,7 +136,7 @@
 					'name': 'repo',
 					'message': 'Git repository name?',
 					default: function( answers ) {
-						var name = answers.name.replace( 'doc-metrix', '' );
+						var name = answers.name.replace( 'doc-metrix-', '' );
 						return name + '-node';
 					}
 				},

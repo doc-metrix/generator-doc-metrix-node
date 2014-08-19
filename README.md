@@ -4,7 +4,7 @@ Yeoman Generator
 
 This module is a [Yeoman](http://yeoman.io) generator for [doc-metrix](https://github.com/doc-metrix) Node.js modules.
 
-NOTE: the generator build will fail, due to a [bug](https://github.com/yeoman/generator/commit/0f3195040688f9f215aa670d3fedf0d0784ab53c) fixed in the most recent Yeoman generator codebase. This generator does produce the correct output, but the tests will fail until the authors of the underlying generator code can [submit](https://github.com/yeoman/generator/issues/620) a patch to NPM.
+NOTE: the generator build will fail due to a [bug](https://github.com/yeoman/generator/commit/0f3195040688f9f215aa670d3fedf0d0784ab53c) fixed in the most recent Yeoman generator codebase. This generator does produce the correct output, but the tests will fail until the authors of the underlying generator code can [submit](https://github.com/yeoman/generator/issues/620) a patch to NPM.
 
 
 ## Getting Started
@@ -140,7 +140,7 @@ The default license is the [MIT license](http://opensource.org/licenses/MIT).
 
 #### Package.json
 
-The generator creates a scaffold `package.json`, using the module name to generate the Github repository urls. You need to manually add `keywords` and any additional `dependencies`.
+The generator creates a scaffold `package.json`. You need to manually add `keywords` and any additional `dependencies`.
 
 
 #### Documentation

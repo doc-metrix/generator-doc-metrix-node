@@ -54,7 +54,7 @@ You have the option to initialize the module directory as a Git repository. The 
 
 ``` bash
 $ git init
-$ git remote add origin https://github.com/doc-metrix/{{ module_name }}.git
+$ git remote add origin https://github.com/doc-metrix/{{ repo_name }}.git
 $ git add -A
 $ git commit -m "[INIT]"
 ```
@@ -62,6 +62,17 @@ $ git commit -m "[INIT]"
 The initialization process stops short of pushing the commit to the remote repository.
 
 Note: Git initialization assumes you have write access to the [doc-metrix](https://github.com/doc-metrix) organization on Github. If you are not already a member and are interested in contributing, contact one of the [owners](https://github.com/kgryte).
+
+
+#### Repository
+
+If you elected to initialize a local Git repository, you must specify the corresponding remote repository name. The default is the unique module id (e.g., `doc-metrix-cpu` --> `cpu` ) with a `-node` suffix. Hence,
+
+``` bash
+{{name}}-node
+```
+
+The `-node` suffix serves to distinguish the utility from similar utilities written in other languages.
 
 
 #### Author

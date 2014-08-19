@@ -67,7 +67,7 @@ Note: Git initialization assumes you have write access to the [doc-metrix](https
 If you elected to initialize a local Git repository, you must specify the corresponding remote repository name. The default is the unique module id (e.g., `doc-metrix-cpu` --> `cpu` ) with a `-node` suffix. Hence,
 
 ``` bash
-{{name}}-node
+<name>-node
 ```
 
 The `-node` suffix serves to distinguish the utility from similar utilities written in other languages.

@@ -28,8 +28,8 @@ describe( 'doc-metrix generator for Node.js', function tests() {
 				'skip-message': true
 			})
 			.withPrompt({
-				'name': 'test-node',
-				'repo': 'test',
+				'name': 'doc-metrix-test',
+				'repo': 'test-node',
 				'author': 'Jane Doe',
 				'email': 'jane@doe.com',
 				'license_holder': 'Jane Doe &lt;jane@doe.com&gt;',

@@ -13,6 +13,7 @@ examples/
 reports/
 support/
 test/
+specs/
 
 # Node.js #
 ###########

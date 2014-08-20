@@ -106,6 +106,8 @@ examples/
 	- index.js
 lib/
 	- index.js
+scripts/
+	- specs.js
 test/
 	- test.js
 .gitignore
@@ -114,7 +116,6 @@ test/
 LICENSE
 Makefile
 package.json
-bower.json
 README.md
 TODO.md
 ```
@@ -142,26 +143,28 @@ The default license is the [MIT license](http://opensource.org/licenses/MIT).
 The generator creates a scaffold `package.json`. You need to manually add `keywords` and any additional `dependencies`.
 
 
-#### Bower.json
-
-The generator creates a scaffold `bower.json`. You need to manually add `dependencies`.
-
-``` bash
-$ bower install <package> --save
-```
-
-[Bower](http://bower.io) is currently how specifications are managed. Each specification is available on the Bower [registry](http://bower.io/search/) using the prefix `doc-metrix-`. For example, to install the specification for CPU performance metrics
-
-``` bash
-$ bower install doc-metrix-cpu --save
-```
-
-
 #### Documentation
 
 The generator includes a `TODO.md` file. Use this file for general TODOs which are not tied to any particular file line.
 
 The `README.md` is a scaffold. You should add to the API, usage, and example code sections.
+
+
+#### Scripts
+
+The generator creates a post-install script for retrieving metric specifications: `scripts/specs.js`. If your module requires specifications, you should add to the `resources` object using the following convention:
+
+``` javascript
+var resources = {
+		'spec_name': 'http://path/to/raw/specification.json',
+		'spec_name': 'http://path/to/raw/specification.json',
+		...
+	};
+```
+
+The `key` should be the specification name as referred to in your module and the `value` is the absolute URL from which to retrieve the specification.
+
+When a user downloads your module, the post-install script will fetch the remote resources and store them in a `specs` folder in the top-level application directory.
 
 
 #### Lib

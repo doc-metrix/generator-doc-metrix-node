@@ -241,18 +241,6 @@
 		}, // end METHOD package()
 
 		/**
-		* METHOD: bower()
-		*	Creates a `bower.json` file.
-		*/
-		bower: function() {
-			var context = {
-					'repo': this.repo
-				};
-
-			this.template( '_bower.json', 'bower.json' );
-		}, // end METHOD bower()
-
-		/**
 		* METHOD: todo()
 		*	Copies over a TODO file.
 		*/
@@ -275,6 +263,14 @@
 
 			this.template( '_README.md', 'README.md', context );
 		}, // end METHOD readme()
+
+		/**
+		* METHOD: scripts()
+		*	Copies over module scripts.
+		*/
+		scripts: function() {
+			this.copy( 'scripts/_specs.js', 'scripts/specs.js' );
+		}, // end METHOD scripts()
 
 		/**
 		* METHOD: lib()

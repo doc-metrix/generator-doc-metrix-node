@@ -314,7 +314,7 @@
 		*/
 		install: function() {
 			var config = {
-					'bower': true,
+					'bower': false,
 					'npm': true,
 					'skipInstall': this.options[ 'skip-install' ],
 					'skipMessage': false,

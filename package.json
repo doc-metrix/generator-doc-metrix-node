@@ -1,6 +1,6 @@
 {
   "name": "generator-doc-metrix-node",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A Yeoman generator for doc-metric Node.js modules.",
   "author": {
     "name": "Athan Reines",

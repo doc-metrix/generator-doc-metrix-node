@@ -102,10 +102,14 @@ view-istanbul-report:
 # NODE #
 
 # Installing node_modules:
+.PHONY: install
+
 install:
 	npm install
 
 # Clean node:
+.PHONY: clean-node
+
 clean-node:
 	rm -rf node_modules
 
@@ -113,5 +117,7 @@ clean-node:
 
 # CLEAN #
 
+.PHONY: clean
+	
 clean:
 	rm -rf build

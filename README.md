@@ -4,6 +4,8 @@ Yeoman Generator
 
 This module is a [Yeoman](http://yeoman.io) generator for [doc-metrix](https://github.com/doc-metrix) Node.js modules.
 
+Note: this generator is tailored for providing an API to JSON specifications. For other utilities, you will need to remove the boilerplate code in the library, text, and example files.
+
 
 ## Getting Started
 
@@ -147,7 +149,7 @@ The generator creates a scaffold `package.json`. You need to manually add `keywo
 
 The generator includes a `TODO.md` file. Use this file for general TODOs which are not tied to any particular file line.
 
-The `README.md` is a scaffold. You should add to the API, usage, and example code sections.
+The `README.md` is a scaffold. You should add to the usage and example code sections.
 
 
 #### Scripts

@@ -52,12 +52,14 @@
 	/**
 	* FUNCTION: getSpecs()
 	*	Retrieves the latest specifications.
+	*
+	* @private
 	*/
 	function getSpecs() {
 		var keys = Object.keys( resources );
-
-		fs.mkdirSync( filepath );
-
+		if ( !fs.existsSync( filepath ) ) {
+			fs.mkdirSync( filepath );
+		}
 		for ( var i = 0; i < keys.length; i++ ) {
 			request({
 				'method': 'GET',
@@ -70,6 +72,7 @@
 	* FUNCTION: onResponse( name )
 	*	Returns an HTTP response handler.
 	* 
+	* @private
 	* @param {String} name - resource name
 	* @returns {Function} response handler
 	*/
@@ -79,6 +82,7 @@
 		* FUNCTION: onResponse( error, response, body )
 		*	Handler for HTTP response.
 		*
+		* @private
 		* @param {Object} error - error object
 		* @param {Object} response - HTTP response object
 		* @param {Object} body - response body

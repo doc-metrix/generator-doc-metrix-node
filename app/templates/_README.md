@@ -16,7 +16,7 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
-To interface with the [specification](https://github.com/doc-metrix/INSERT_NAME),
+To interface with the [documentation](https://github.com/doc-metrix/INSERT_NAME),
 
 ``` javascript
 var metrics = require( 'doc-metrix-NAME' );
@@ -32,7 +32,7 @@ Metric centric methods...
 
 #### metrics.mexists( name )
 
-Checks whether a metric having the provided `name` is included in the specification.
+Checks whether a metric having the provided `name` is included in the documentation.
 
 ``` javascript
 metrics.mexists( '' );
@@ -47,7 +47,7 @@ Note: method is __not__ case sensitive.
 
 #### metrics.mlist()
 
-Lists all metrics included in the specification.
+Lists all metrics included in the documentation.
 
 ``` javascript
 metrics.mlist();
@@ -68,7 +68,7 @@ Note: filtering for metric names __is__ case sensitive. Ignore case `/i` for cas
 
 #### metrics.mget( [filter] )
 
-Returns metric specifications. The provided `filter` may be a `string` or a regular expression. If a metric does not have a specification, returns `null`. To return a single specification,
+Returns metric documentation. The provided `filter` may be a `string` or a regular expression. If a metric does not have documentation, returns `null`. To return a single metric,
 
 ``` javascript
 metrics.mget( '' );
@@ -78,14 +78,14 @@ metrics.mget( '' );
 // returns null
 ```
 
-To return metric specifications matching a filter,
+To return metric documentation matching a filter,
 
 ``` javascript
 metrics.mget( /.+/i );
 // returns {...}
 ```
 
-To return all metric specifications,
+To return all metric documentation,
 
 ``` javascript
 metrics.mget();
@@ -104,7 +104,7 @@ Device centric methods...
 
 #### metrics.dexists( name )
 
-Checks whether a device having the provided `name` is known to have associated metric specifications.
+Checks whether a device having the provided `name` is known to have associated metric documentation.
 
 ``` javascript
 metrics.dexists( '' );
@@ -116,7 +116,7 @@ metrics.dexists( '' );
 
 #### metrics.dlist()
 
-Lists all devices known to have associated metric specifications.
+Lists all devices known to have associated metric documentation.
 
 ``` javascript
 metrics.dlist();
@@ -128,7 +128,7 @@ Note: the returned list __may__ contain regular expressions. Regular expressions
 
 #### metrics.dget( [name] )
 
-Returns specifications associated with devices. If a device does not have associated specifications, returns `null`. To return a single device's specifications,
+Returns metric documentation associated with devices. If a device does not have associated documentation, returns `null`. To return a single device's metric documentation,
 
 ``` javascript
 metrics.dget( '' );
@@ -138,7 +138,7 @@ metrics.dget( '' );
 // returns null
 ```
 
-To return all devices and their associated specifications,
+To return all devices and their associated metric documentation,
 
 ``` javascript
 metrics.dget();
@@ -166,12 +166,12 @@ $ npm install
 $ npm update
 ```
 
-this package, when used as a dependency, will attempt an HTTP request to retrieve the latest specification from [Github](https://github.com/doc-metrix/INSERT_NAME).
+this package, when used as a dependency, will attempt an HTTP request to retrieve the latest documentation from [Github](https://github.com/doc-metrix/INSERT_NAME).
 
-During development, run the following command to retrieve the latest specification
+During development, run the following command to retrieve the latest documentation
 
 ``` bash
-$ npm run specs
+$ npm run docs
 ```
 
 

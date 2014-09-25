@@ -4,7 +4,7 @@ Yeoman Generator
 
 This module is a [Yeoman](http://yeoman.io) generator for [doc-metrix](https://github.com/doc-metrix) Node.js modules.
 
-Note: this generator is tailored for providing an API to JSON specifications. For other utilities, you will need to remove the boilerplate code in the library, text, and example files.
+Note: this generator is tailored for providing an API to JSON documentation. For other utilities, you will need to remove the boilerplate code in the library, text, and example files.
 
 
 ## Getting Started
@@ -109,7 +109,7 @@ examples/
 lib/
 	- index.js
 scripts/
-	- specs.js
+	- resources.js
 test/
 	- test.js
 .gitignore
@@ -154,19 +154,19 @@ The `README.md` is a scaffold. You should add to the usage and example code sect
 
 #### Scripts
 
-The generator creates a post-install script for retrieving metric specifications: `scripts/specs.js`. If your module requires specifications, you should add to the `resources` object using the following convention:
+The generator creates a post-install script for retrieving metric resources: `scripts/resources.js`. If your module requires resources, you should add to the `resources` object using the following convention:
 
 ``` javascript
 var resources = {
-		'spec_name': 'http://path/to/raw/specification.json',
-		'spec_name': 'http://path/to/raw/specification.json',
+		'doc_name': 'http://path/to/raw/resource.json',
+		'doc_name': 'http://path/to/raw/resource.json',
 		...
 	};
 ```
 
-The `key` should be the specification name as referred to in your module and the `value` is the absolute URL from which to retrieve the specification.
+The `key` should be the resource name as referred to in your module and the `value` is the absolute URL from which to retrieve the resource.
 
-When a user downloads your module, the post-install script will fetch the remote resources and store them in a `specs` folder in the top-level application directory.
+When a user downloads your module, the post-install script will fetch the remote resources and store them in a `docs` folder in the top-level application directory.
 
 
 #### Lib

@@ -4,7 +4,7 @@
 var // Expectation library:
 	chai = require( 'chai' ),
 
-	// Metrics specification:
+	// Metrics documentation:
 	METRICS = require( '' ),
 
 	// Module to be tested:
@@ -78,7 +78,7 @@ describe( '<%= name %>', function tests() {
 
 	describe( 'mexists', function tests() {
 
-		it( 'should provide a method to check the existence of a metric specification', function test() {
+		it( 'should provide a method to check the existence of metric documentation', function test() {
 			expect( metrics.mexists ).to.be.a( 'function' );
 		});
 
@@ -105,15 +105,15 @@ describe( '<%= name %>', function tests() {
 			}
 		});
 
-		it( 'should return false for a metric which does not have a specification', function test() {
+		it( 'should return false for a metric which does not have documentation', function test() {
 			assert.notOk( metrics.mexists( 'invalid.classification.utilization' ) );
 		});
 
-		it( 'should return true for a metric which has a specification', function test() {
+		it( 'should return true for a metric which has documentation', function test() {
 			assert.ok( metrics.mexists( NAMES[ 0 ] ) );
 		});
 
-		it( 'should return true for a metric which has a specification regardless of input name case', function test() {
+		it( 'should return true for a metric which has documentation regardless of input name case', function test() {
 			assert.ok( metrics.mexists( NAMES[ 0 ].toUpperCase() ) );
 		});
 
@@ -121,7 +121,7 @@ describe( '<%= name %>', function tests() {
 
 	describe( 'mget', function tests() {
 
-		it( 'should provide a method to get a metric specification', function test() {
+		it( 'should provide a method to get metric documentation', function test() {
 			expect( metrics.mget ).to.be.a( 'function' );
 		});
 
@@ -148,23 +148,23 @@ describe( '<%= name %>', function tests() {
 			}
 		});
 
-		it( 'should return null for a metric which does not have a specification', function test() {
+		it( 'should return null for a metric which does not have documentation', function test() {
 			assert.isNull( metrics.mget( 'invalid.classification.utilization' ) );
 		});
 
-		it( 'should return a metric specification', function test() {
+		it( 'should return metric documentation', function test() {
 			assert.deepEqual( metrics.mget( NAMES[ 0 ] ), METRICS[ NAMES[ 0 ] ] );
 		});
 
-		it( 'should return all metric specifications if called without a metric name', function test() {
+		it( 'should return all metric documentation if called without a metric name', function test() {
 			assert.deepEqual( metrics.mget(), METRICS );
 		});
 
-		it( 'should return a metric specification regardless of input name case', function test() {
+		it( 'should return metric documentation regardless of input name case', function test() {
 			assert.deepEqual( metrics.mget( NAMES[ 0 ].toUpperCase() ), METRICS[ NAMES[ 0 ] ] );
 		});
 
-		it( 'should return a filtered list of metric specifications', function test() {
+		it( 'should return a filtered list of metric documentation', function test() {
 			assert.isObject( metrics.mget( /.+/i ) );
 		});
 
@@ -194,7 +194,7 @@ describe( '<%= name %>', function tests() {
 
 	describe( 'dexists', function tests() {
 
-		it( 'should provide a method to check the existence of a device having associated specifications', function test() {
+		it( 'should provide a method to check the existence of a device having associated documentation', function test() {
 			expect( metrics.dexists ).to.be.a( 'function' );
 		});
 
@@ -221,15 +221,15 @@ describe( '<%= name %>', function tests() {
 			}
 		});
 
-		it( 'should return false for a device which does not have associated specification', function test() {
+		it( 'should return false for a device which does not have associated documentation', function test() {
 			assert.notOk( metrics.dexists( 'unknown-device-name' ) );
 		});
 
-		it( 'should return true for a device which has associated specifications', function test() {
+		it( 'should return true for a device which has associated documentation', function test() {
 			assert.ok( metrics.dexists( '' ) );
 		});
 
-		it( 'should return true for a device which has an associated specification regardless of input name case', function test() {
+		it( 'should return true for a device which has associated documentation regardless of input name case', function test() {
 			assert.ok( metrics.dexists( '' ) );
 		});
 
@@ -237,7 +237,7 @@ describe( '<%= name %>', function tests() {
 
 	describe( 'dget', function tests() {
 
-		it( 'should provide a method to get metric specifications associated with a device', function test() {
+		it( 'should provide a method to get metric documentation associated with a device', function test() {
 			expect( metrics.dget ).to.be.a( 'function' );
 		});
 
@@ -264,23 +264,23 @@ describe( '<%= name %>', function tests() {
 			}
 		});
 
-		it( 'should return null for a device which does not have an associated metric specification', function test() {
+		it( 'should return null for a device which does not have associated metric documentation', function test() {
 			assert.isNull( metrics.dget( 'no such device' ) );
 		});
 
-		it( 'should return metric specification(s) associated with a device', function test() {
+		it( 'should return metric documentation associated with a device', function test() {
 			var obj = metrics.dget( '' );
 			assert.isObject( obj );
 			assert.ok( Object.keys( obj ).length );
 		});
 
-		it( 'should return metric specifications associated with all devices if not provided a device name', function test() {
+		it( 'should return metric documentation associated with all devices if not provided a device name', function test() {
 			var obj = metrics.dget();
 			assert.isObject( obj );
 			assert.ok( Object.keys( obj ).length );
 		});
 
-		it( 'should return metric specification(s) associated with a device regardless of input device case', function test() {
+		it( 'should return metric documentation associated with a device regardless of input device case', function test() {
 			var obj = metrics.dget( '' );
 			assert.isObject( obj );
 			assert.ok( Object.keys( obj ).length );

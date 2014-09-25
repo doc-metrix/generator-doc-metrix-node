@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
 *
-*	SCRIPTS: spec
+*	SCRIPTS: resources
 *
 *
 *	DESCRIPTION:
-*		- Retrieves metric specifications.
+*		- Retrieves metric resources.
 *
 *
 *	NOTES:
@@ -37,25 +37,25 @@
 		request = require( 'request' );
 
 
-	// SPECIFICATIONS //
+	// RESOURCES //
 
 	var resources = {};
 
 
 	// VARIABLES //
 
-	var filepath = path.resolve( __dirname, '../specs' );
+	var filepath = path.resolve( __dirname, '../docs' );
 
 
 	// FUNCTIONS //
 
 	/**
-	* FUNCTION: getSpecs()
-	*	Retrieves the latest specifications.
+	* FUNCTION: getResources()
+	*	Retrieves the latest resources.
 	*
 	* @private
 	*/
-	function getSpecs() {
+	function getResources() {
 		var keys = Object.keys( resources );
 		if ( !fs.existsSync( filepath ) ) {
 			fs.mkdirSync( filepath );
@@ -66,7 +66,7 @@
 				'uri': resources[ keys[i] ]
 			}, onResponse( keys[i] ) );
 		}
-	} // end FUNCTION getSpecs()
+	} // end FUNCTION getResources()
 
 	/**
 	* FUNCTION: onResponse( name )
@@ -92,13 +92,13 @@
 				throw new Error( error );
 			}
 			if ( !body ) {
-				throw new Error( 'Error when retrieving metric specification: ' + name + '.' );
+				throw new Error( 'Error when retrieving metric resource: ' + name + '.' );
 			}
 			try {
 				JSON.parse( body );
 			} catch ( err ) {
 				console.log( body );
-				throw new Error( 'Unable to parse body content as JSON for metric specification: ' + name + '.' );
+				throw new Error( 'Unable to parse body content as JSON for metric resource: ' + name + '.' );
 			}
 			fs.writeFile( filename, body, 'utf8', function onError( error ) {
 				if ( error ) {
@@ -111,6 +111,6 @@
 
 	// RUN //
 
-	getSpecs();
+	getResources();
 
 })();

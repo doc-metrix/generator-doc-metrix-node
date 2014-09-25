@@ -269,7 +269,7 @@
 		*	Copies over module scripts.
 		*/
 		scripts: function() {
-			this.copy( 'scripts/_specs.js', 'scripts/specs.js' );
+			this.copy( 'scripts/_resources.js', 'scripts/resources.js' );
 		}, // end METHOD scripts()
 
 		/**

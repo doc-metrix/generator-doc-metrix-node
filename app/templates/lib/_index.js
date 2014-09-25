@@ -29,7 +29,7 @@
 (function() {
 	'use strict';
 
-	// SPECIFICATIONS //
+	// RESOURCES //
 
 	var	METRICS = require( '' );
 
@@ -44,14 +44,14 @@
 
 	/**
 	* FUNCTION: deviceHash()
-	*	Transforms the METRICS specification into a hash based on device name.
+	*	Transforms the METRICS documentation into a hash based on device name.
 	*
 	* @private
 	*/
 	function deviceHash() {
 		var keys,
 			metric,
-			spec,
+			doc,
 			devices,
 			name;
 
@@ -59,15 +59,15 @@
 
 		for ( var i = 0; i < keys.length; i++ ) {
 			metric = keys[ i ];
-			spec = METRICS[ metric ];
-			devices = spec.devices;
+			doc = METRICS[ metric ];
+			devices = doc.devices;
 			if ( devices ) {
 				for ( var j = 0; j < devices.length; j++ ) {
 					name = devices[ j ];
 					if ( !DEVICES[ name ] ) {
 						DEVICES[ name ] = {};
 					}
-					DEVICES[ name ][ metric ] = spec;
+					DEVICES[ name ][ metric ] = doc;
 				}
 			}
 		}
@@ -124,7 +124,7 @@
 
 	/**
 	* METHOD: mexists( name )
-	*	Checks whether a metric has a specification.
+	*	Checks whether a metric has documentation.
 	*
 	* @param {String} name - metric name
 	* @returns {Boolean}
@@ -141,7 +141,7 @@
 
 	/**
 	* METHOD: dexists( name )
-	*	Checks whether a device has associated metric specifications.
+	*	Checks whether a device has associated metric documentation.
 	*
 	* @param {String} name - device name
 	* @returns {Boolean}
@@ -197,13 +197,13 @@
 
 	/**
 	* METHOD: mget( filter )
-	*	Returns metric specifications. If a metric name is provided as a filter, returns an individual metric specification. If no specification exists, returns `null`. If a regular expression is provided, returns all specifications matching the filter. If no argument is provided, returns all metric specifications.
+	*	Returns metric documentation. If a metric name is provided as a filter, returns an individual metric's documentation. If no metric documentation exists, returns `null`. If a regular expression is provided, returns all metric documentation matching the filter. If no argument is provided, returns all metric documentation.
 	*
 	* @param {String|RegExp} filter - metric filter; e.g., metric name or regular expression
-	* @returns {Object|null} specification(s) or null
+	* @returns {Object|null} documentation or null
 	*/
 	Metrics.prototype.mget = function( filter ) {
-		var specs = {},
+		var docs = {},
 			type,
 			idx,
 			metric,
@@ -222,7 +222,7 @@
 				return null;
 			}
 			metric = NAMES.mList[ idx ];
-			specs = METRICS[ metric ];
+			docs = METRICS[ metric ];
 		} else {
 			metrics = NAMES.mList.filter( function ( name ) {
 				return filter.test( name );
@@ -232,21 +232,21 @@
 			}
 			for ( var i = 0; i < metrics.length; i++ ) {
 				metric = metrics[ i ];
-				specs[ metric ] = METRICS[ metric ];
+				docs[ metric ] = METRICS[ metric ];
 			}
 		}
-		return JSON.parse( JSON.stringify( specs ) );
+		return JSON.parse( JSON.stringify( docs ) );
 	}; // end METHOD mget()
 
 	/**
 	* METHOD: dget( name )
-	*	Returns specifications associated with devices. If a device `name` is provided, returns an `object` containing associated metric specifications. If no specifications are associated with a device, returns `null`. If no argument is provided, returns an `object` listing all devices and their associated specifications.
+	*	Returns metric documentation associated with devices. If a device `name` is provided, returns an `object` containing associated metric documentation. If no documentation is associated with a device, returns `null`. If no argument is provided, returns an `object` listing all devices and their associated documentation.
 	*
 	* @param {String} name - device name
-	* @returns {Object|null} specification(s) or null
+	* @returns {Object|null} documentation or null
 	*/
 	Metrics.prototype.dget = function( name ) {
-		var specs,
+		var docs,
 			names,
 			re;
 
@@ -261,14 +261,14 @@
 		re = NAMES.dRegExp;
 		for ( var i = 0; i < re.length; i++ ) {
 			if ( re[ i ].test( name ) ) {
-				specs = DEVICES[ names[ i ] ];
+				docs = DEVICES[ names[ i ] ];
 				break;
 			}
 		}
-		if ( !specs ) {
+		if ( !docs ) {
 			return null;
 		}
-		return JSON.parse( JSON.stringify( specs ) );
+		return JSON.parse( JSON.stringify( docs ) );
 	}; // end METHOD dget()
 
 

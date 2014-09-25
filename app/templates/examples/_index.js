@@ -77,7 +77,7 @@
 	*	]
 	*/
 
-	// Get a metric specification:
+	// Get a metric's documentation:
 	console.log( metrics.mget( '' ) );
 
 	/**
@@ -89,7 +89,7 @@
 		}
 	*/
 
-	// Get metric specifications matching a filter:
+	// Get metric documentation matching a filter:
 	console.log( metrics.mget( /.+/i ) );
 
 	/**
@@ -137,7 +137,7 @@
 	*	]
 	*/
 
-	// Get a list of metric specifications arranged by device name:
+	// Get a list of metric documentation arranged by device name:
 	console.log( metrics.dget( '' ) );
 
 	/**

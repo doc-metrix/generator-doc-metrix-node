@@ -57,7 +57,7 @@ describe( 'doc-metrix generator for Node.js', function tests() {
 				'Makefile',
 				'LICENSE',
 				'package.json',
-				'scripts/specs.js',
+				'scripts/resources.js',
 				'examples/index.js',
 				'test/test.js',
 				'lib/index.js'
